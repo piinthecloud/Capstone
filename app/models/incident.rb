@@ -22,6 +22,10 @@ class Incident
 
     puts city_details
 
+    sleep 0.3
+
+
+
     if existing_loc
       # puts "existing_loc!!!!"
 
@@ -32,7 +36,7 @@ class Incident
 
 
       response = HTTParty.get(path)
-      puts response
+
       @city_lat_lng[city_details] = {
         :lat => response['results'][0]['geometry']['location']['lat'],
         :lng => response['results'][0]['geometry']['location']['lng']
