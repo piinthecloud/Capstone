@@ -1,6 +1,10 @@
 class IncidentsController < ApplicationController
 
 
+  def render_res
+    render json: @incidents.as_json(only: [:date_searched, :city, :state, :victim_gender, :race, :latino?, :shots_fired, :victim_age, :hit_killed?, :lat, :lng  ])
+
+  end
 
   def index
     @incidents = Incident.where(:city.ne => nil)
@@ -8,13 +12,6 @@ class IncidentsController < ApplicationController
     render_res
 
   end
-
-  def render_res
-    render json: @incidents.as_json(only: [:date_searched, :city, :state, :victim_gender, :race, :latino?, :shots_fired, :victim_age, :hit_killed?, :lat, :lng  ])
-
-  end
-
-
 
   def search_state
 
