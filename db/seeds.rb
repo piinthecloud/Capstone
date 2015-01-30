@@ -9,8 +9,11 @@ end
 Incident.add_locations
 
 
+GeoData.destroy_all
 
-
+JSON.parse(File.read("public/us-states.js")).each do |x|
+  GeoData.create( x )
+end
 
 # @states =["Illinois", "Nevada", "Utah", "California", "Michigan", "Kentucky", "Virginia", "New York", "Florida", "Georgia", "Maine", "New Hampshire", "Washington", "Maryland", "Colorado", "North Carolina", "Pennsylvania", "Wisconsin", "New Jersey", "Missouri", "Texas", "Connecticut", "Ohio", "Idaho", "Massachusetts", "Mississippi", "Arizona", "Louisiana", "Oregon", "South Carolina", "Indiana", "Arkansas", "Hawaii", "Iowa", "Alabama", "Rhode Island", "Alaska", "New Mexico", "Kansas", "South Dakota", "Tennessee", "Minnesota", "Vermont", "West Virginia", "Oklahoma", "District of Columbia", "Wyoming", "Montana", "Delaware"]
 #

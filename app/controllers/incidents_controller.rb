@@ -21,13 +21,15 @@ class IncidentsController < ApplicationController
 
   end
 
-  def search_race
+  def search_geo_data
 
-    @incidents = Incident.where(:city.ne => nil, :race => Regexp.new(params[:race].capitalize) )
-
-    render_res
+    @states = GeoData.all
+    @geodata ={"type"=>"FeatureCollection","features"=>@states.as_json}
+    render json: @geodata
 
   end
+
+
 
 
 end

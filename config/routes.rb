@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # get "/incidents", to: "incidents#index"
   #
 
-  get '/race/:race', to: "incidents#search_race"
+  # get '/race/:race', to: "incidents#search_race"
+
+  get '/geodata/', to: "incidents#search_geo_data"
 
 end
