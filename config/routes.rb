@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
 
+  # get "/incidents", to: "incidents#index"
+  # get '/race/:race', to: "incidents#search_race"
   # get 'incidents/index'
 
-  root to: "incidents#index"
 
-  get '/states/:state', to: "incidents#search_state"
-  # get "/incidents", to: "incidents#index"
-  #
+  root                  to: "incidents#index"
 
-  # get '/race/:race', to: "incidents#search_race"
+  get '/geodata/',      to: "incidents#search_geo_data"
 
-  get '/geodata/', to: "incidents#search_geo_data"
+  get '/city/',         to: "incidents#city_group"
+
+  get '/race/',         to: "incidents#race_group"
+
+
 
 end
