@@ -6,6 +6,11 @@ CSV.foreach("public/shooting_data.csv", :headers => true,  encoding: 'ISO8859-1'
   Incident.create( incident.to_h )
 end
 
+
+CSV.foreach("public/fe.csv", :headers => true,  encoding: 'ISO8859-1').each do |incident|
+  Feincident.create( incident.to_h )
+end
+
 Incident.add_locations
 
 

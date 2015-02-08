@@ -2,16 +2,14 @@
 class Incident
   include MongoMapper::Document
 
-  #
-  # key :blah, :field_name => "Timestamp"
-  # # key :field_name => "Timestamp", Time
-  #
-  # key :blah, Time
-  #
+
+
+
+
 
   def race_ethnicity
 
-    if race == "White" && latino? == "Not of Hispanic or Latino origin" || race == "White" && latino? == "Unknown"
+    if race == "White" && latino? == "Not of Hispanic or Latino origin" || race == "White" && latino? == "Unknown" || race == "White" && latino? == nil
       "White"
 
     elsif latino? == "Hispanic or Latino origin"
@@ -29,9 +27,9 @@ class Incident
     elsif race == "Native Hawaiian or Other Pacific Islander"
       "Native Hawaiian or Other Pacific Islander"
 
-    elsif race == "Unknown" && latino? == "Not of Hispanic or Latino origin" || race == "Uknown" && latino? == nil
+    # elsif race == "Unknown" && latino? == "Not of Hispanic or Latino origin" || race == "Unknown" && latino? == nil || race == nil && latino? == "Unknown" || race == nil || race == "Unknown" && latino? == "Unknown"
+    else
       "Unknown"
-
 
     end
 
