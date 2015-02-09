@@ -38,6 +38,17 @@ end
 gem 'rack-cors', :require => 'rack/cors'
 
 
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem "capistrano-passenger"
+end
+
+gem 'therubyracer', platforms: :ruby
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
