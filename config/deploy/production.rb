@@ -15,14 +15,14 @@
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server '54.213.76.49', user: 'ubuntu', roles: %w{web app}, my_property: :my_value
+# server '54.213.76.49', user: 'ubuntu', roles: %w{web app}, my_property: :my_value
 
 
 server '54.213.76.49',
   user: 'ubuntu',
   roles: %w{web app db},
   ssh_options: {
-    keys: %w(/Users/stephmpi/.ssh/[pem file name].pem),
+    keys: %w(/Users/stephmpi/.ssh/ec2-demo.pem),
     forward_agent: false,
     auth_methods: %w(publickey)
   }

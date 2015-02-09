@@ -6,9 +6,9 @@ lock '3.3.5'
 
 set :application, 'capstone'
 set :repo_url, 'git@github.com:piinthecloud/Capstone.git'
-# set :use_sudo, false
-#
-# set :deploy_to, '/var/www/capstone/'
+set :use_sudo, false
+
+set :deploy_to, '/var/www/capstone/'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
