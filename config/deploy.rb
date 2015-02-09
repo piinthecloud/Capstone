@@ -5,10 +5,10 @@ lock '3.3.5'
 # set :repo_url, 'git@example.com:me/my_repo.git'
 
 set :application, 'capstone'
-set :repo_url, 'git@github.com:Ada-Developers-Academy/ec2-demo.git'
-set :use_sudo, false
-
-set :deploy_to, '/var/www/capstone/'
+set :repo_url, 'git@github.com:piinthecloud/Capstone.git'
+# set :use_sudo, false
+#
+# set :deploy_to, '/var/www/capstone/'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -44,6 +44,7 @@ namespace :deploy do
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
+      execute :touch, release_path.join('tmp/restart.txt')
       # Here we can do anything such as:
       # within release_path do
       #   execute :rake, 'cache:clear'
