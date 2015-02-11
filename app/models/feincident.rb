@@ -3,6 +3,8 @@ class Feincident
   include MongoMapper::Document
 
 
+
+
   def race_ethnicity
 
     if race == "European-American/White"

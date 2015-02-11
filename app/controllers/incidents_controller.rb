@@ -13,36 +13,6 @@ class IncidentsController < ApplicationController
   end
 
 
-  def city_group
-    @incidents = Feincident.where(:city.ne => nil).group_by do |obj|
-      [obj.lat, obj.lng]
-    end
-
-    @groups = @incidents.map do |grp|
-      {loc:grp[0],
-        inc:grp[1]}
-      end
-
-    render json: @groups.as_json
-  end
-
-
-  def race_group
-    @incidents = Feincident.where(:city.ne => nil).group_by do |obj|
-      obj.race_ethnicity
-    end
-
-    render json: @incidents.as_json
-  end
-
-  def gender_group
-    @incidents = Feincident.where(:city.ne => nil).group_by do |obj|
-      obj.victim_gender
-    end
-
-    render json: @incidents.as_json
-  end
-
   def search_geo_data
 
     @states = GeoData.all
@@ -51,13 +21,49 @@ class IncidentsController < ApplicationController
 
   end
 
-
-
-
-
-
 end
 
+# def city_group
+#   @incidents = Feincident.where(:city.ne => nil).group_by do |obj|
+#     [obj.lat, obj.lng]
+#   end
+#
+#   @groups = @incidents.map do |grp|
+#     {loc:grp[0],
+#       inc:grp[1]}
+#     end
+#
+#   render json: @groups.as_json
+# end
+#
+#
+# def race_group
+#   @incidents = Feincident.where(:city.ne => nil).group_by do |obj|
+#     obj.race_ethnicity
+#   end
+#
+#   render json: @incidents.as_json
+# end
+
+# def gender_count(gender)
+#   Feincident.all(:victim_gender => gender).count
+#
+# end
+
+# def gender_group
+#   @male_count = gender_count("Male" || "male")
+#   @female_count = gender_count("Female" || "female")
+#
+#   @incidents = Feincident.where(:city.ne => nil).group_by do |obj|
+#     obj.victim_gender
+#     # :male_count => @male_count,
+#     # :female_count =>@female_count]
+#   end
+#
+#
+#   render json: @incidents.as_json
+#
+# end
 
 #
 #
