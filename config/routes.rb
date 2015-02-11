@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
   get '/race/',         to: "incidents#race_group"
 
+  get '/gender/',       to: "incidents#gender_group"
+
+
+
 
 
 end

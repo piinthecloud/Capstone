@@ -35,6 +35,13 @@ class IncidentsController < ApplicationController
     render json: @incidents.as_json
   end
 
+  def gender_group
+    @incidents = Feincident.where(:city.ne => nil).group_by do |obj|
+      obj.victim_gender
+    end
+
+    render json: @incidents.as_json
+  end
 
   def search_geo_data
 
