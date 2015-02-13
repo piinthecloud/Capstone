@@ -13,7 +13,7 @@ namespace :scraper do
 
       if x[0] != "null"
         @num += 1
-      Test.create(
+      Feincident.create(
         :timestamp =>      x[0],
         :victim_name =>    x[1],
         :victim_age =>     x[2],
