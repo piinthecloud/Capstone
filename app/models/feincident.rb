@@ -46,6 +46,7 @@ class Feincident
 
 
   @city_lat_lng = {}
+
   def self.get_lat_lng(incident)
 
     city_details = [incident.state[0..1], incident.address, incident.city.strip.downcase]
@@ -54,20 +55,16 @@ class Feincident
     path = (URI.encode("https://maps.googleapis.com/maps/api/geocode/json?address=#{incident.address},#{incident.city},#{incident.state}&key=AIzaSyCtWQQPhMFYqA3K7DCFPSn6MDi-xCAMXH8"))
 
 
-
-    puts city_details
-
     # sleep 0.1
 
 
 
     if existing_loc
-      puts "existing_loc!!!!"
+
 
       incident.set(:lat => existing_loc[:lat])
       incident.set(:lng => existing_loc[:lng])
     else
-      puts "GOOGLE call!!!!"
 
 
       response = HTTParty.get(path)
