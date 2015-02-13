@@ -52,9 +52,9 @@ class Feincident
     city_details = [incident.state[0..1], incident.address, incident.city.strip.downcase]
     existing_loc = @city_lat_lng[city_details]
 
-    path = (URI.encode("https://maps.googleapis.com/maps/api/geocode/json?address=#{incident.address},#{incident.city},#{incident.state}&key=AIzaSyCtWQQPhMFYqA3K7DCFPSn6MDi-xCAMXH8"))
+    path = (URI.encode("https://maps.googleapis.com/maps/api/geocode/json?address=#{incident.address},#{incident.city},#{incident.state}&components=country:US&key=AIzaSyCtWQQPhMFYqA3K7DCFPSn6MDi-xCAMXH8"))
 
-
+    https://maps.googleapis.com/maps/api/geocode/json?address=Hwy 75 N & FM 2296,#{incident.city},#{incident.state}&key=AIzaSyCtWQQPhMFYqA3K7DCFPSn6MDi-xCAMXH8
     # sleep 0.1
 
 
