@@ -1,4 +1,5 @@
-class Test
+
+class ScrapeData
   include MongoMapper::Document
 
 

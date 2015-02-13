@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 
-gem 'httparty'
+gem 'httparty', '>= 0.13.3'
 
 gem "mongo_mapper"
 gem 'bson_ext'

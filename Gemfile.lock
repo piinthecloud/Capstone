@@ -169,7 +169,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rvm
   coffee-rails (~> 4.0.0)
-  httparty
+  httparty (>= 0.13.3)
   jbuilder (~> 2.0)
   jquery-rails
   mongo_mapper
