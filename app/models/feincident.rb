@@ -3,8 +3,6 @@ class Feincident
   include MongoMapper::Document
 
 
-
-
   def race_ethnicity
 
     if race == "European-American/White"
@@ -31,6 +29,15 @@ class Feincident
 
     end
 
+
+  end
+
+  def image
+    if image_of_deceased == nil
+      "img/noimage.png"
+    else
+      image_of_deceased
+    end
 
   end
 

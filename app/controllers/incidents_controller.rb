@@ -2,7 +2,7 @@ class IncidentsController < ApplicationController
 
 
   def render_res
-    render json: @incidents.as_json(only: [:date_searched, :city, :state, :victim_gender, :race, :latino?, :shots_fired, :victim_age, :hit_killed?, :lat, :lng  ], methods: [:race_ethnicity])
+    render json: @incidents.as_json(only: [:date_searched, :city, :state, :victim_gender, :race, :latino?, :shots_fired, :victim_age, :hit_killed?, :lat, :lng ], methods: [:race_ethnicity, :image])
 
   end
 
