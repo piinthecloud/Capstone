@@ -54,10 +54,6 @@ class Feincident
 
     path = (URI.encode("https://maps.googleapis.com/maps/api/geocode/json?address=#{incident.address},#{incident.city},#{incident.state}&components=country:US&key=AIzaSyCtWQQPhMFYqA3K7DCFPSn6MDi-xCAMXH8"))
 
-    https://maps.googleapis.com/maps/api/geocode/json?address=Hwy 75 N & FM 2296,#{incident.city},#{incident.state}&key=AIzaSyCtWQQPhMFYqA3K7DCFPSn6MDi-xCAMXH8
-    # sleep 0.1
-
-
 
     if existing_loc
 

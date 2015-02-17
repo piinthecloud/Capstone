@@ -7,7 +7,7 @@ namespace :scraper do
     @last_num = ScrapeData.all.last.last_row
     @num = 0
 
-    data = HTTParty.get("https://spreadsheets.google.com/tq?tqx=out:csv&tq=OFFSET%20#{@last_num}%20&key=0Aul9Ys3cd80fdHNuRG5VeWpfbnU4eVdIWTU3Q0xwSEE&gid=0")
+    data = HTTParty.get("https://spreadsheets.google.com/tq?tqx=out:csv&tq=order%20by%20A%20asc%20OFFSET%20#{@last_num}%20&key=0Aul9Ys3cd80fdHNuRG5VeWpfbnU4eVdIWTU3Q0xwSEE&gid=0")
 
 
 
