@@ -23,7 +23,6 @@ class Feincident
     elsif race == "Native Hawaiian or Other Pacific Islander"
       "Native Hawaiian or Other Pacific Islander"
 
-    # elsif race == "Unknown" && latino? == "Not of Hispanic or Latino origin" || race == "Unknown" && latino? == nil || race == nil && latino? == "Unknown" || race == nil || race == "Unknown" && latino? == "Unknown"
     else
       "Unknown"
 
@@ -40,7 +39,6 @@ class Feincident
     end
 
   end
-
 
   def self.add_locations
 

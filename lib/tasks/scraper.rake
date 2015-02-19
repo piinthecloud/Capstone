@@ -23,6 +23,8 @@ namespace :scraper do
         :victim_age =>     x[2],
         :victim_gender =>  x[3],
         :victim_race =>    x[4],
+        :image_of_deceased => x[5],
+        :date_searched  => x[6],
         :address =>        x[7],
         :city =>           x[8],
         :state =>          x[9],
