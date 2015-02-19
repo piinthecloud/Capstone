@@ -8,7 +8,7 @@ class Feincident
     if race == "European-American/White"
       "White"
 
-    elsif race == "Hispanic/Latino"
+    elsif race == "Hispanic/Latino" || race == "Hispanic-Latino"
       "Hispanic or Latino origin"
 
     elsif race == "Native American/Alaskan"
